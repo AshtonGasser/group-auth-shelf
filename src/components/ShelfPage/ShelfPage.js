@@ -12,7 +12,7 @@ import Paper from '@material-ui/core/Paper';
 
 function ShelfPage() {
   useEffect(() => {
-    dispatch({type: 'FETCH_ITEMS'})
+    dispatch({type: 'FETCH_SHELF'})
   }, []);
   
 const handleDelete = (id) => {
