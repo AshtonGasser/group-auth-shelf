@@ -1,6 +1,6 @@
 import React from 'react';
 import {useEffect} from 'react';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
@@ -11,6 +11,10 @@ import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
 
 function ShelfPage() {
+
+  const dispatch = useDispatch();
+  const shelf = useSelector(store => store.shelf);
+
   useEffect(() => {
     dispatch({type: 'FETCH_SHELF'})
   }, []);
@@ -23,7 +27,7 @@ const handleDelete = (id) => {
     <div className="container">
       <h2>Shelf</h2>
       <p>All of the available items can be seen here.</p>
-      {something.map(image => {
+      {shelf.map(image => {
         return (
           <Grid item sm={3}>
               <Paper>
