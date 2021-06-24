@@ -12,7 +12,13 @@ import axios from "axios";
   }
 }
 
+function* itemFetchSaga() {
+
+  
+    yield takeLatest("FETCH_SHELF", fetchItem)
+  
+}
 
 
 
-export default fetchItem
+export default itemFetchSaga

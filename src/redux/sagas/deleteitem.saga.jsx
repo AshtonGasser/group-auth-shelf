@@ -13,5 +13,8 @@ function* deleteItem (action) {
 }
 }
 
+function* deleteItemSaga (){
+    yield takeLatest ('DELETE_ITEM', deleteItem)
+}
 
-export default deleteItem;
+export default deleteItemSaga;

@@ -11,4 +11,8 @@ function* addItem(action) {
       }
 }
 
-export default addItem;
+function* postItemSaga () {
+    yield takeLatest("ADD_ITEM", addItem)
+}
+
+export default postItemSaga;
