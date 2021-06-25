@@ -16,19 +16,23 @@ function ShelfPage() {
   const shelf = useSelector(store => store.shelf);
 
   useEffect(() => {
-    dispatch({type: 'FETCH_SHELF'})
+  
+  dispatch({type: 'FETCH_SHELF'})
   }, []);
   
 const handleDelete = (id) => {
   console.log('Item to delete:', id)
   dispatch({type: 'DELETE_ITEM', payload: id})
 }
+  console.log(shelf);
   return (
     <div className="container">
       <h2>Shelf</h2>
       <p>All of the available items can be seen here.</p>
       {shelf.map(image => {
+
         return (
+          <div>
           <Grid item sm={3}>
               <Paper>
                   <Card key={image.id}>
@@ -42,6 +46,7 @@ const handleDelete = (id) => {
                   </Card>
               </Paper>
           </Grid>
+          </div>
       );
       })}
     </div>

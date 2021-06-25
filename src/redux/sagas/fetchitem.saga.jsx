@@ -2,6 +2,7 @@ import { put, takeLatest } from "redux-saga/effects";
 import axios from "axios";
 
  function* fetchItem() {
+   console.log('in fetch item');
   //get all items from db
   try {
     const item = yield axios.get("/api/shelf");
